@@ -13,4 +13,3 @@
 
 /dev/block/platform/soc/1d84000.ufshc/by-name/vendor                    /vendor             ext4    ro,barrier=1,discard                                 wait
 
-

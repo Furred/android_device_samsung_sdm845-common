@@ -3,4 +3,3 @@ allow kernel sysfs_sec_key:dir r_dir_perms;
 
 
 allow kernel device:blk_file getattr;
-
