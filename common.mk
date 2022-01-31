@@ -16,7 +16,7 @@
 #
 
 # Vendor blobs
-$(call inherit-product, vendor/samsung/starqltechn/starqltechn-vendor.mk)
+$(call inherit-product, vendor/samsung/starqlte/starqlte-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -139,4 +139,4 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 -include $(LOCAL_PATH)/system_prop.mk
 
 # Vendor blobs
-$(call inherit-product, vendor/samsung/starqltechn/starqltechn-vendor.mk)
+$(call inherit-product, vendor/samsung/starqlte/starqlte-vendor.mk)

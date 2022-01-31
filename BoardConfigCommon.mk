@@ -134,4 +134,4 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Inherit from the proprietary version
--include vendor/samsung/starqltechn/BoardConfigVendor.mk
+-include vendor/samsung/starqlte/BoardConfigVendor.mk
