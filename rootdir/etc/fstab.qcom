@@ -11,3 +11,6 @@
 #/dev/block/zram0 none swap defaults zramsize=2147483648,max_comp_streams=8
 /dev/block/platform/soc/1d84000.ufshc/by-name/boot /boot  emmc defaults recoveryonly
 
+/dev/block/platform/soc/1d84000.ufshc/by-name/vendor                    /vendor             ext4    ro,barrier=1,discard                                 wait
+
+
