@@ -16,14 +16,11 @@
 #
 
 # Vendor blobs
-$(call inherit-product, vendor/samsung/sdm845-common/sdm845-common-vendor.mk)
+$(call inherit-product, vendor/samsung/starqltechn/starqltechn-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
-
-# VNDK
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
 # Screen density
 # Device uses high-density artwork where available
@@ -63,6 +60,20 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/audio_policy_configuration.xml
+
+# Media
+PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libmm-omxcore \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxG711Enc \
+    libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw
 
 # SP-NDK
 PRODUCT_PACKAGES += \
@@ -108,7 +119,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom
+    power.qcom \
+    vendor.qti.hardware.perf@1.0.vendor
 
 # S-Pen
 PRODUCT_COPY_FILES += \
@@ -126,5 +138,5 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 -include $(LOCAL_PATH)/product_prop.mk
 -include $(LOCAL_PATH)/system_prop.mk
 
-# Call proprietary blob setup
-$(call inherit-product, vendor/samsung/sdm845-common/sdm845-common-vendor.mk)
+# Vendor blobs
+$(call inherit-product, vendor/samsung/starqltechn/starqltechn-vendor.mk)

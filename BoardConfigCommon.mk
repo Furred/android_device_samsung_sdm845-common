@@ -38,7 +38,6 @@ TARGET_NO_RADIOIMAGE := true
 # Platform
 BOARD_VENDOR := samsung
 BOARD_USES_QCOM_HARDWARE := true
-BUILD_WITHOUT_VENDOR := true
 TARGET_BOARD_PLATFORM := sdm845
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
 
@@ -70,6 +69,7 @@ BOARD_KERNEL_CMDLINE += androidboot.configfs=true androidboot.usbcontroller=a600
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image/ loop.max_part=7
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive root=/dev/block/sda22
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/sdm845
@@ -81,6 +81,15 @@ BOARD_CACHEIMAGE_PARTITION_SIZE    := 336592896
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4650418176
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+# Vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_SIZE := 786432000
+#BUILD_WITHOUT_VENDOR := true
+
+ALLOW_MISSING_DEPENDENCIES=true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_DUP_RULES := true
+
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -90,9 +99,11 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Graphics
-TARGET_USES_HWC2 := true
 OVERRIDE_RS_DRIVER := libRSDriverArm.so
 BACKLIGHT_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TARGET_USES_ION := true
+TARGET_USES_HWC2 := true
+TARGET_USES_GRALLOC1 := true
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
@@ -108,6 +119,13 @@ PRODUCT_TARGET_VNDK_VERSION := 29
 
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+
+# Audio
+
+## Security
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
@@ -116,4 +134,4 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Inherit from the proprietary version
--include vendor/samsung/sdm845-common/BoardConfigVendor.mk
+-include vendor/samsung/starqltechn/BoardConfigVendor.mk
