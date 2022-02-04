@@ -18,10 +18,6 @@ allow rild hal_audio_default:file r_file_perms;
 # /data
 allow rild system_data_file:dir getattr;
 
-# /data/vendor/log
-allow rild vendor_log_file:dir rw_dir_perms;
-allow rild vendor_log_file:file create_file_perms;
-
 # /dev/block/platform/.+/by-name/radio
 allow rild radio_block_device:blk_file r_file_perms;
 
@@ -31,10 +27,6 @@ allow rild drb_device:chr_file rw_file_perms;
 # /dev/umts_*
 # /dev/umts_ipc*
 allow rild vendor_radio_device:chr_file rw_file_perms;
-
-# /data/vendor/secradio
-allow rild vendor_radio_vendor_data_file:dir rw_dir_perms;
-allow rild vendor_radio_vendor_data_file:file create_file_perms;
 
 # /efs/FactoryApp/
 # /mnt/vendor/efs/root

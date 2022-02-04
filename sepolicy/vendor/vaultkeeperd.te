@@ -25,8 +25,6 @@ allow vaultkeeperd vaultkeeper_efs_file:dir create_dir_perms;
 allow vaultkeeperd vaultkeeper_socket:dir { ioctl read write getattr lock open watch watch_reads add_name remove_name search };
 allow vaultkeeperd vaultkeeper_socket:sock_file create_file_perms;
 allow vaultkeeperd vendor_file:file rx_file_perms;
-allow vaultkeeperd vendor_log_file:dir create_dir_perms;
-allow vaultkeeperd vendor_log_file:file create_file_perms;
 allow vaultkeeperd vendor_shell_exec:file rx_file_perms;
 allow vaultkeeperd vendor_toolbox_exec:file rx_file_perms;
 
