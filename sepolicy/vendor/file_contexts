@@ -18,7 +18,6 @@
 /data/vendor/biometrics(/.*)?                u:object_r:biometrics_vendor_data_file:s0
 /data/vendor/conn(/.*)?                      u:object_r:conn_vendor_data_file:s0
 /data/vendor/gps(/.*)?                       u:object_r:gps_vendor_data_file:s0
-/data/vendor/secradio(/.*)?                  u:object_r:vendor_radio_vendor_data_file:s0
 /data/vendor/tee(/.*)?                       u:object_r:tee_vendor_data_file:s0
 /data/vendor/thermal(/.*)?                   u:object_r:thermal_data_file:s0
 /data/vendor/mac_addr(/.*)?                  u:object_r:vendor_wifi_vendor_data_file:s0
